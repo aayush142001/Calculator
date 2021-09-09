@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="calc.css">
+<script>
+	//function for displaying values
+	function dis(val)
+	{
+	document.getElementById("box").value+=val
+	 }
+	//function for evaluation
+	function solve()
+	{
+	let x = document.getElementById("box").value
+	let y = eval(x)
+	document.getElementById("box").value = y
+	}
+	//function for clearing the display
+	function clr()
+	{
+	document.getElementById("box").value = ""
+	}
+	// function for clearing backspace one by one 
+	function back()
+	{
+	var value = document.getElementById("box").value;
+    document.getElementById("box").value = value.substr(0, value.length - 1);
+    }
+	</script>
+</head>
+<body>
+    <div class="calc-container">
+    <h1><center>Calculator</center></h1>
+
+		<input id="box" value="" type="text">
+        
+		<div class="btn-container">
+		<div class="row" >
+				<button class="btn" value="1" onclick="dis('1')"><strong>1</strong></button>
+				<button class="btn" value="2" onclick="dis('2')"><strong>2</strong></button>
+				<button class="btn" value="3" onclick="dis('3')"><strong>3</strong></button>
+				<button class="btn abcd" onclick="back()"><strong > <= </strong></button>
+		</div>
+		<div class="row">
+				<button class="btn" value="4"onclick="dis('4')"><strong>4</strong></button>
+				<button class="btn" value="5" onclick="dis('5')"><strong>5</strong></button>
+				<button class="btn" value="6" onclick="dis('6')"><strong>6</strong></button>
+				<button class="btn" value="+"onclick="dis('+')"><strong>+</strong></button>
+		</div> 
+		<div class="row">
+				<button class="btn" value="7" onclick="dis('7')"><strong>7</strong></button>
+				<button class="btn" value="8" onclick="dis('8')"><strong>8</strong></button>
+				<button class="btn" value="9" onclick="dis('9')"><strong>9</strong></button>
+				<button class="btn" value="-" onclick="dis('-')"><strong>-</strong></button>
+		</div>
+		<div class="row">
+				<button class="btn" value="." onclick="dis('.')"><strong>.</strong></button>
+				<button class="btn" value="0" onclick="dis('0')"><strong>0</strong></button>
+				<button class="btn" value="00" onclick="dis('00')"><strong>00</strong></button>
+				<button class="btn" value="*" onclick="dis('*')"><strong>*</strong></button>
+		</div>
+		<div class="row">
+				<button class="btn abcd "value="C" onclick="clr()"><strong >C</strong></button>
+				<!-- Evaluating function call eval()-->
+				<button class=" btn size" value="=" onclick="solve()"><strong>=</strong></button>
+				<button class="btn" value="/" onclick="dis('/')"><strong>/</strong></button>
+		</div>	
+		</div>
+    </div>
+</div>
+</body>
+</html>
